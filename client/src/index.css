@@ -142,9 +142,8 @@ h1 em, h2 em { color: #c7ff4b; font-style: normal; }
 .manifesto-copy-body p { margin: 0; }
 .manifesto-copy-body b { color: #162d42; font-weight: 600; }
 .portrait-card { margin: 0; width: 100%; max-width: 320px; justify-self: end; align-self: start; }
-.portrait-frame { position: relative; aspect-ratio: 947 / 2048; overflow: hidden; isolation: isolate; background: #f4f0e8; }
-.portrait-frame::before { content: ""; position: absolute; z-index: -1; inset: -14px; background: url("/manus-storage/Sanu_Dilshan_Portrait_951cc856.webp") center / cover no-repeat; filter: blur(14px) saturate(.8); opacity: .34; transform: scale(1.08); }
-.portrait-frame img { position: relative; z-index: 0; display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%); }
+.portrait-frame { position: relative; aspect-ratio: 947 / 2048; overflow: hidden; background: #f4f0e8; }
+.portrait-frame img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .proof-strip { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 72px; border-top: 1px solid #b8c0bc; border-bottom: 1px solid #b8c0bc; }
 .proof-strip div { min-height: 123px; display: grid; align-content: center; gap: 7px; padding: 20px 28px; border-right: 1px solid #b8c0bc; }
 .proof-strip div:last-child { border-right: 0; }

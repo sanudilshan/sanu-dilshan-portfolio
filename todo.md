@@ -1,5 +1,8 @@
 # Portfolio refinement checklist
 
+- [x] Remove the portrait blur treatment while preserving the original photo presentation.
+- [x] Verify the clean portrait treatment at desktop and mobile sizes, then save a checkpoint.
+
 - [x] Remove the remaining portrait border treatment and move the marked heading to the top-left.
 - [x] Verify the updated portrait and heading placement on desktop and mobile, then save a checkpoint.
 
