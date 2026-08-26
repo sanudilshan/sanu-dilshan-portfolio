@@ -1,5 +1,9 @@
 # Portfolio refinement checklist
 
+- [x] Inspect the public deployment and production build/server configuration to identify why source code is displayed.
+- [x] Confirm the production serving configuration already serves the compiled portfolio at the domain root; no server code change is required.
+- [ ] Verify the corrected public deployment and save a checkpoint.
+
 - [x] Remove the portrait blur treatment while preserving the original photo presentation.
 - [x] Verify the clean portrait treatment at desktop and mobile sizes, then save a checkpoint.
 
