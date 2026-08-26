@@ -224,10 +224,6 @@ export default function Home() {
           <img className="hero-art" src="/manus-storage/sanu-atlas-hero_55d60693.png" alt="Abstract secure software architecture visualization" />
           <div className="hero-scrim" aria-hidden="true" />
 
-          <div className="hero-topline intro-animate intro-delay-1">
-            <span>SCROLL TO EXPLORE <ArrowDownRight size={15} /></span>
-          </div>
-
           <div className="hero-content">
             <p className="hero-kicker intro-animate intro-delay-2"><span /> I BUILD RELIABLE DIGITAL PRODUCTS</p>
             <h1 id="hero-heading" className="intro-animate intro-delay-3">Secure systems.<br /><em>Tangible</em> outcomes.</h1>
@@ -249,7 +245,6 @@ export default function Home() {
         </section>
 
         <section className="manifesto section-pad" aria-labelledby="manifesto-heading">
-          <div className="section-label"><span>00</span><p>THE PRACTICE</p></div>
           <div className="manifesto-body">
             <h2 id="manifesto-heading">Backend discipline.<br />Front-end <em>clarity.</em></h2>
             <div className="manifesto-side">
@@ -274,7 +269,6 @@ export default function Home() {
 
         <section className="work-section section-pad" id="work" aria-labelledby="work-heading">
           <div className="section-head">
-            <div className="section-label"><span>01</span><p>SELECTED WORK</p></div>
             <p className="section-aside"><span>THE PROJECT ARCHIVE</span>A selection of systems built to solve real workflow, security, and data needs.</p>
           </div>
           <h2 id="work-heading" className="section-title">Build records<br /><em>worth opening.</em></h2>

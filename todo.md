@@ -1,5 +1,8 @@
 # Portfolio refinement checklist
 
+- [x] Identify and remove the three page elements targeted in the latest visual-editor request.
+- [x] Verify the cleaned-up page at desktop and mobile sizes, then save a checkpoint.
+
 - [x] Place the supplied original portrait in a suitable profile-focused portfolio section without editing the image subject.
 - [x] Verify the portrait’s desktop and mobile presentation, then save a checkpoint.
 
