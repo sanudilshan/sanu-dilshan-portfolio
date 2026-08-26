@@ -1,5 +1,9 @@
 # Portfolio refinement checklist
 
+- [x] Research the intended Google Antigravity interaction and audit the current motion system.
+- [x] Add smooth anchor scrolling, performance-conscious section motion, and an Antigravity-inspired interaction.
+- [x] Verify the improved interactions at desktop and mobile sizes and save a checkpoint.
+
 - [x] Move the marked section heading to the top-right and preserve responsive readability.
 - [x] Verify the new heading placement on desktop and mobile, then save a checkpoint.
 

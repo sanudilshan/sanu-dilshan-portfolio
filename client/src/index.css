@@ -57,7 +57,7 @@
 }
 
 * { border-color: var(--border); }
-html { scroll-behavior: smooth; background: #071222; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; background: #071222; }
 body { margin: 0; min-width: 320px; background: #071222; color: #f6f4ed; font-family: "Manrope", sans-serif; }
 body, button, a { -webkit-font-smoothing: antialiased; }
 button, a { font: inherit; }
@@ -103,6 +103,9 @@ button { border: 0; }
 .contact-grid { position: absolute; inset: 0; z-index: -1; opacity: .6; background-image: linear-gradient(rgba(220, 232, 245, .075) 1px, transparent 1px), linear-gradient(90deg, rgba(220, 232, 245, .075) 1px, transparent 1px); background-size: 52px 52px; mask-image: linear-gradient(100deg, #000 0%, rgba(0,0,0,.75) 46%, transparent 80%); }
 .hero-art { position: absolute; z-index: -3; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .92; }
 .hero-scrim { position: absolute; z-index: -2; inset: 0; background: linear-gradient(90deg, #071222 0%, rgba(7,18,34,.92) 29%, rgba(7,18,34,.4) 68%, rgba(7,18,34,.2) 100%), linear-gradient(0deg, #071222 0%, transparent 30%); }
+.antigravity-field { position: absolute; z-index: -1; inset: 0; overflow: hidden; pointer-events: none; }
+.antigravity-node { position: absolute; left: var(--node-x); top: var(--node-y); width: 4px; height: 4px; border-radius: 999px; background: #c7ff4b; box-shadow: 0 0 0 4px rgba(199,255,75,.06), 0 0 18px rgba(199,255,75,.24); opacity: .55; transform: translate3d(var(--shift-x, 0px), var(--shift-y, 0px), 0); transition: transform 480ms cubic-bezier(.23,1,.32,1), opacity 200ms cubic-bezier(.23,1,.32,1); }
+.antigravity-field:hover .antigravity-node { opacity: .85; }
 .hero-content { grid-column: 1; align-self: center; justify-self: start; width: min(100%, 710px); margin: 0 0 17px; }
 .hero-kicker { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; font-family: "Manrope", sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .1em; color: #c7ff4b; }
 .hero-kicker span { width: 28px; height: 1px; background: #c7ff4b; }
@@ -242,6 +245,12 @@ h1 em, h2 em { color: #c7ff4b; font-style: normal; }
 .intro-delay-1 { animation-delay: .08s; }.intro-delay-2 { animation-delay: .15s; }.intro-delay-3 { animation-delay: .22s; }.intro-delay-4 { animation-delay: .3s; }.intro-delay-5 { animation-delay: .36s; }.intro-delay-6 { animation-delay: .44s; }
 @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 
+.motion-ready [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 620ms cubic-bezier(.23,1,.32,1), transform 620ms cubic-bezier(.23,1,.32,1); }
+.motion-ready [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+.motion-ready .project-card[data-reveal] { transition-delay: 70ms; }
+.motion-ready .project-card[data-reveal]:nth-child(2) { transition-delay: 130ms; }
+.motion-ready .project-card[data-reveal]:nth-child(3) { transition-delay: 190ms; }
+
 @media (max-width: 1080px) {
   .identity-rail { width: 176px; padding: 23px 15px 20px; }
   .content-canvas { margin-left: 176px; }
@@ -266,6 +275,7 @@ h1 em, h2 em { color: #c7ff4b; font-style: normal; }
   .hero-topline { font-size: 8px; }
   .hero-art { object-position: 63% center; }
   .hero-scrim { background: linear-gradient(90deg, rgba(7,18,34,.96) 0%, rgba(7,18,34,.78) 62%, rgba(7,18,34,.4) 100%), linear-gradient(0deg, #071222 0%, transparent 25%); }
+  .antigravity-field { display: none; }
   .hero-content { width: 100%; margin-top: 63px; align-self: flex-start; }
   .hero h1 { font-size: clamp(3.18rem, 14.5vw, 4.35rem); line-height: .88; }
   .hero-summary { max-width: 365px; margin-bottom: 27px; font-size: 13px; line-height: 1.72; }
@@ -329,4 +339,8 @@ h1 em, h2 em { color: #c7ff4b; font-style: normal; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .antigravity-field { display: none; }
 }

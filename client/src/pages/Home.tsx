@@ -16,7 +16,7 @@ import {
   ShieldCheck,
   X,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const projects = [
   {
@@ -116,6 +116,13 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
+const antigravityNodes = [
+  [53, 18], [61, 13], [69, 23], [76, 17], [82, 31],
+  [56, 35], [64, 41], [72, 39], [86, 44], [60, 56],
+  [68, 63], [79, 58], [90, 66], [55, 73], [67, 79],
+  [74, 71], [84, 83], [94, 78], [49, 48], [91, 22],
+];
+
 function AtlasMark({ compact = false }: { compact?: boolean }) {
   return (
     <span className={`atlas-mark ${compact ? "atlas-mark--compact" : ""}`} aria-hidden="true">
@@ -130,6 +137,9 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("work");
   const [progress, setProgress] = useState(0);
+  const [pointer, setPointer] = useState({ x: 68, y: 52 });
+  const pointerFrame = useRef<number | null>(null);
+  const pendingPointer = useRef(pointer);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -150,6 +160,60 @@ export default function Home() {
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const coarsePointer = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    const revealTargets = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+
+    if (!reducedMotion) {
+      document.documentElement.classList.add("motion-ready");
+    }
+
+    if (reducedMotion || !("IntersectionObserver" in window)) {
+      revealTargets.forEach((target) => target.classList.add("is-visible"));
+      return () => document.documentElement.classList.remove("motion-ready");
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8%" },
+    );
+
+    revealTargets.forEach((target) => observer.observe(target));
+
+    const updatePointer = (event: PointerEvent) => {
+      if (coarsePointer || event.pointerType === "touch") return;
+      const hero = document.querySelector<HTMLElement>(".hero");
+      if (!hero) return;
+      const bounds = hero.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) return;
+      pendingPointer.current = {
+        x: ((event.clientX - bounds.left) / bounds.width) * 100,
+        y: ((event.clientY - bounds.top) / bounds.height) * 100,
+      };
+      if (pointerFrame.current !== null) return;
+      pointerFrame.current = window.requestAnimationFrame(() => {
+        setPointer(pendingPointer.current);
+        pointerFrame.current = null;
+      });
+    };
+
+    if (!coarsePointer) window.addEventListener("pointermove", updatePointer, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      if (!coarsePointer) window.removeEventListener("pointermove", updatePointer);
+      if (pointerFrame.current !== null) window.cancelAnimationFrame(pointerFrame.current);
+      document.documentElement.classList.remove("motion-ready");
+    };
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
@@ -223,6 +287,13 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-heading">
           <img className="hero-art" src="/manus-storage/sanu-atlas-hero_55d60693.png" alt="Abstract secure software architecture visualization" />
           <div className="hero-scrim" aria-hidden="true" />
+          <div className="antigravity-field" aria-hidden="true">
+            {antigravityNodes.map(([x, y], index) => {
+              const shiftX = Math.max(-18, Math.min(18, (x - pointer.x) * 0.32));
+              const shiftY = Math.max(-18, Math.min(18, (y - pointer.y) * 0.32));
+              return <i key={index} className="antigravity-node" style={{ "--node-x": `${x}%`, "--node-y": `${y}%`, "--shift-x": `${shiftX}px`, "--shift-y": `${shiftY}px` } as React.CSSProperties} />;
+            })}
+          </div>
 
           <div className="hero-content">
             <p className="hero-kicker intro-animate intro-delay-2"><span /> I BUILD RELIABLE DIGITAL PRODUCTS</p>
@@ -244,7 +315,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="manifesto section-pad" aria-labelledby="manifesto-heading">
+        <section className="manifesto section-pad" aria-labelledby="manifesto-heading" data-reveal>
           <div className="manifesto-body">
             <h2 id="manifesto-heading">Backend discipline.<br />Front-end <em>clarity.</em></h2>
             <div className="manifesto-side">
@@ -267,7 +338,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="work-section section-pad" id="work" aria-labelledby="work-heading">
+        <section className="work-section section-pad" id="work" aria-labelledby="work-heading" data-reveal>
           <div className="section-head">
             <p className="section-aside"><span>THE PROJECT ARCHIVE</span>A selection of systems built to solve real workflow, security, and data needs.</p>
           </div>
@@ -275,7 +346,7 @@ export default function Home() {
 
           <div className="project-list">
             {projects.map((project, index) => (
-              <article className={`project-card project-card--${project.accent}`} key={project.id}>
+              <article className={`project-card project-card--${project.accent}`} key={project.id} data-reveal>
                 <div className="project-meta">
                   <span>{project.id}</span>
                   <span>{project.kind}</span>
@@ -301,7 +372,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="experience-section section-pad" id="experience" aria-labelledby="experience-heading">
+        <section className="experience-section section-pad" id="experience" aria-labelledby="experience-heading" data-reveal>
           <div className="experience-sticky">
             <div className="section-label"><span>02</span><p>EXPERIENCE</p></div>
             <h2 id="experience-heading">Learning by<br /><em>shipping.</em></h2>
@@ -325,7 +396,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="stack-section section-pad" id="stack" aria-labelledby="stack-heading">
+        <section className="stack-section section-pad" id="stack" aria-labelledby="stack-heading" data-reveal>
           <div className="section-label"><span>03</span><p>TOOLS / METHODS</p></div>
           <div className="stack-heading">
             <h2 id="stack-heading">A practical<br /><em>working stack.</em></h2>
@@ -349,7 +420,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="contact-section" id="contact" aria-labelledby="contact-heading">
+        <section className="contact-section" id="contact" aria-labelledby="contact-heading" data-reveal>
           <div className="contact-grid" aria-hidden="true" />
           <div className="section-label"><span>04</span><p>OPEN CHANNEL</p></div>
           <div className="contact-main">
