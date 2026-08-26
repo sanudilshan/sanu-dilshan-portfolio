@@ -181,9 +181,7 @@ export default function Home() {
         </a>
 
         <div className="rail-atlas-id" aria-label="Terminal Atlas identity">
-          <div className="rail-id-line"><span>ATLAS_INDEX</span><b>SD / 01</b></div>
-          <p>SANU<br />DILSHAN</p>
-          <div className="rail-coordinates"><span>08.5241° N</span><span>76.9366° E</span></div>
+          <p className="rail-name">SANU<br />DILSHAN</p>
         </div>
 
         <div className="rail-role">
@@ -192,9 +190,8 @@ export default function Home() {
         </div>
 
         <nav className="rail-nav" aria-label="Primary navigation">
-          {navItems.map((item, index) => (
+          {navItems.map((item) => (
             <a className={activeSection === item.href.slice(1) ? "is-active" : ""} key={item.href} href={item.href}>
-              <b>{String(index + 1).padStart(2, "0")}</b>
               <span>{item.label}</span>
             </a>
           ))}
@@ -214,9 +211,9 @@ export default function Home() {
       </aside>
 
       <div className={`mobile-menu ${menuOpen ? "is-open" : ""}`}>
-        {navItems.map((item, index) => (
+        {navItems.map((item) => (
           <a key={item.href} href={item.href} onClick={closeMenu}>
-            <span>{String(index + 1).padStart(2, "0")}</span>{item.label}
+            {item.label}
           </a>
         ))}
         <a className="mobile-menu-contact" href="mailto:sanudilshan36@gmail.com" onClick={closeMenu}>Start a conversation <ArrowUpRight size={17} /></a>
@@ -228,7 +225,6 @@ export default function Home() {
           <div className="hero-scrim" aria-hidden="true" />
 
           <div className="hero-topline intro-animate intro-delay-1">
-            <span><b>SYS_01</b> / PORTFOLIO</span>
             <span>SCROLL TO EXPLORE <ArrowDownRight size={15} /></span>
           </div>
 
@@ -271,7 +267,7 @@ export default function Home() {
         <section className="work-section section-pad" id="work" aria-labelledby="work-heading">
           <div className="section-head">
             <div className="section-label"><span>01</span><p>SELECTED WORK</p></div>
-            <p className="section-aside">A selection of systems built to solve real workflow, security, and data needs.</p>
+            <p className="section-aside"><span>THE PROJECT ARCHIVE</span>A selection of systems built to solve real workflow, security, and data needs.</p>
           </div>
           <h2 id="work-heading" className="section-title">Build records<br /><em>worth opening.</em></h2>
 
@@ -311,7 +307,7 @@ export default function Home() {
             <div className="section-label"><span>02</span><p>EXPERIENCE</p></div>
             <h2 id="experience-heading">Learning by<br /><em>shipping.</em></h2>
             <p>Each role strengthened a different piece of my product engineering practice—from API foundations to data transformations and responsive application interfaces.</p>
-            <a className="inline-link" href="/manus-storage/Sanu_Dilshan_Resume_3d97be21.pdf" target="_blank" rel="noreferrer">Open full résumé <Download size={15} /></a>
+            <a className="inline-link" href="/manus-storage/Sanu_Dilshan_Resume_3d97be21.pdf" target="_blank" rel="noreferrer">Open full resume <Download size={15} /></a>
           </div>
           <div className="timeline">
             {experience.map((item, index) => (

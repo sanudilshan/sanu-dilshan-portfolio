@@ -1,5 +1,11 @@
 # Portfolio refinement checklist
 
+- [x] Remove the marked hero label and rail metadata, including the redundant coordinate/index details.
+- [x] Move the hero content to the left while maintaining readable contrast over the background art.
+- [x] Correct the flagged work-section paragraph and project-area layout.
+- [x] Remove section-number decorations from the desktop and mobile navigation.
+- [x] Verify the revised desktop and mobile page, then create a checkpoint.
+
 - [x] Map the ten visual-editor comments to the current Home page components and confirm the intended changes.
 - [x] Remove the three marked decorative/status elements and the three marked proof labels.
 - [x] Repair the flagged identity rail, work-section, project-card, and contact-footer layouts.
