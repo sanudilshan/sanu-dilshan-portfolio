@@ -1,5 +1,9 @@
 # Portfolio refinement checklist
 
+- [x] Move the selected manifesto heading and supporting copy into the top-left position.
+- [x] Place the selected portrait image on the right without harming the mobile sequence.
+- [x] Verify the revised manifesto section on desktop and mobile, then save a checkpoint.
+
 - [x] Research the intended Google Antigravity interaction and audit the current motion system.
 - [x] Add smooth anchor scrolling, performance-conscious section motion, and an Antigravity-inspired interaction.
 - [x] Verify the improved interactions at desktop and mobile sizes and save a checkpoint.
