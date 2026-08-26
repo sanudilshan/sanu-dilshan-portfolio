@@ -1,5 +1,8 @@
 # Portfolio refinement checklist
 
+- [x] Identify and remove the three span elements marked in the project-card area.
+- [x] Verify the project-card layout after removal and save a checkpoint.
+
 - [x] Remove the marked hero label and rail metadata, including the redundant coordinate/index details.
 - [x] Move the hero content to the left while maintaining readable contrast over the background art.
 - [x] Correct the flagged work-section paragraph and project-area layout.

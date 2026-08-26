@@ -294,9 +294,6 @@ export default function Home() {
                     <span className="project-link">PROJECT BRIEF <ArrowUpRight size={15} /></span>
                   </div>
                 </div>
-                <div className="tag-row">
-                  {project.stack.map((tag) => <span key={tag}>{tag}</span>)}
-                </div>
               </article>
             ))}
           </div>
