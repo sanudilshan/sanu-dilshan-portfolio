@@ -72,3 +72,9 @@ The wordmark uses a spaced **SANU / DILSHAN** construction in DM Mono paired wit
 - The left rail is the brand anchor: it carries the Atlas Mark, a visible SANU / DILSHAN wordmark, compact coordinates, an Atlas index, and persistent section wayfinding.
 - Atlas Lime is reserved for actions, active marks, proof numerals, selected headline emphasis, and concise system-status markers. The final signal area remains lime, but is structured with dark grid, ledger, and rule detail.
 - Every project visual is paired with a build-record annotation, a technology route, and an engineering-system label so the visual serves as project evidence rather than decoration.
+
+## Responsive typography refinement
+
+The refreshed direction borrows the strongest applicable principles from modern developer portfolios: clear, personality-led one-line positioning; expressive display type that does not sacrifice scanning; and compact, humanized technical copy. The current DM Mono metadata voice remains useful, but the display voice will move toward a soft, contemporary grotesque with more character and wider shapes. This will make the site feel less like a technical dashboard while keeping project evidence credible.
+
+The desktop canvas will trade the oversized permanent rail for a slimmer, information-rich navigation strip that gives work more width. The mobile canvas will treat every section as an intentional editorial sequence, reducing visual density, increasing type scale where reading begins, and maintaining tap targets and content spacing.
