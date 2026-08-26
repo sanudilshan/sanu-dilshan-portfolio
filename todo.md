@@ -1,5 +1,8 @@
 # Portfolio refinement checklist
 
+- [x] Remove the remaining portrait border treatment and move the marked heading to the top-left.
+- [x] Verify the updated portrait and heading placement on desktop and mobile, then save a checkpoint.
+
 - [x] Blend the portrait into the manifesto background with soft edges while preserving the original subject.
 - [x] Verify the blended portrait treatment on desktop and mobile, then save a checkpoint.
 

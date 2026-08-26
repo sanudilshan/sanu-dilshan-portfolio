@@ -338,10 +338,10 @@ export default function Home() {
         </section>
 
         <section className="work-section section-pad" id="work" aria-labelledby="work-heading" data-reveal>
+          <h2 id="work-heading" className="section-title">Build records<br /><em>worth opening.</em></h2>
           <div className="section-head">
             <p className="section-aside"><span>THE PROJECT ARCHIVE</span>A selection of systems built to solve real workflow, security, and data needs.</p>
           </div>
-          <h2 id="work-heading" className="section-title">Build records<br /><em>worth opening.</em></h2>
 
           <div className="project-list">
             {projects.map((project, index) => (
