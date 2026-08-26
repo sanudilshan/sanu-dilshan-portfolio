@@ -252,9 +252,17 @@ export default function Home() {
           <div className="section-label"><span>00</span><p>THE PRACTICE</p></div>
           <div className="manifesto-body">
             <h2 id="manifesto-heading">Backend discipline.<br />Front-end <em>clarity.</em></h2>
-            <div className="manifesto-copy">
-              <p>I build from the contract outward: clear API design, security at the boundary, deliberate data models, and interfaces that make the work feel obvious.</p>
-              <p>My experience spans <b>ASP.NET Core, FastAPI, React, SQL systems, machine learning, and data engineering</b>—a practical toolkit for turning product requirements into dependable software.</p>
+            <div className="manifesto-side">
+              <div className="manifesto-copy">
+                <p>I build from the contract outward: clear API design, security at the boundary, deliberate data models, and interfaces that make the work feel obvious.</p>
+                <p>My experience spans <b>ASP.NET Core, FastAPI, React, SQL systems, machine learning, and data engineering</b>—a practical toolkit for turning product requirements into dependable software.</p>
+              </div>
+              <figure className="portrait-card">
+                <div className="portrait-frame">
+                  <img src="/manus-storage/Sanu_Dilshan_Portrait_951cc856.webp" alt="Sanu Dilshan in professional attire" />
+                </div>
+                <figcaption><span>01</span><b>SANU DILSHAN</b><em>FULL STACK DEVELOPER</em></figcaption>
+              </figure>
             </div>
           </div>
           <div className="proof-strip" aria-label="Professional highlights">

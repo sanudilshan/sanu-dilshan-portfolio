@@ -1,5 +1,8 @@
 # Portfolio refinement checklist
 
+- [x] Place the supplied original portrait in a suitable profile-focused portfolio section without editing the image subject.
+- [x] Verify the portrait’s desktop and mobile presentation, then save a checkpoint.
+
 - [x] Identify and remove the three span elements marked in the project-card area.
 - [x] Verify the project-card layout after removal and save a checkpoint.
 
