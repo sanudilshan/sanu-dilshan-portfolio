@@ -224,7 +224,6 @@ export default function Home() {
 
       <div className="content-canvas" id="top">
         <section className="hero" aria-labelledby="hero-heading">
-          <div className="hero-grid" aria-hidden="true" />
           <img className="hero-art" src="/manus-storage/sanu-atlas-hero_55d60693.png" alt="Abstract secure software architecture visualization" />
           <div className="hero-scrim" aria-hidden="true" />
 
@@ -254,10 +253,7 @@ export default function Home() {
         </section>
 
         <section className="manifesto section-pad" aria-labelledby="manifesto-heading">
-          <div className="section-label-row">
-            <div className="section-label"><span>00</span><p>THE PRACTICE</p></div>
-            <span className="field-code">FIELD_NOTE / 01 · ENGINEERING PRINCIPLES</span>
-          </div>
+          <div className="section-label"><span>00</span><p>THE PRACTICE</p></div>
           <div className="manifesto-body">
             <h2 id="manifesto-heading">Backend discipline.<br />Front-end <em>clarity.</em></h2>
             <div className="manifesto-copy">
@@ -266,9 +262,9 @@ export default function Home() {
             </div>
           </div>
           <div className="proof-strip" aria-label="Professional highlights">
-            <div><small>PROOF_01</small><b>04</b><span>Relevant internships</span></div>
-            <div><small>PROOF_02</small><b>05+</b><span>API endpoints in expense service</span></div>
-            <div><small>PROOF_03</small><b>20%</b><span>Less manual data processing</span></div>
+            <div><b>04</b><span>Relevant internships</span></div>
+            <div><b>05+</b><span>API endpoints in expense service</span></div>
+            <div><b>20%</b><span>Less manual data processing</span></div>
           </div>
         </section>
 
@@ -335,10 +331,7 @@ export default function Home() {
         </section>
 
         <section className="stack-section section-pad" id="stack" aria-labelledby="stack-heading">
-          <div className="section-label-row">
-            <div className="section-label"><span>03</span><p>TOOLS / METHODS</p></div>
-            <span className="field-code">CAPABILITY_MAP / VERIFIED TOOLKIT</span>
-          </div>
+          <div className="section-label"><span>03</span><p>TOOLS / METHODS</p></div>
           <div className="stack-heading">
             <h2 id="stack-heading">A practical<br /><em>working stack.</em></h2>
             <div className="stack-motto"><ShieldCheck size={21} /><span>Secure by design.<br />Clean by default.</span></div>
@@ -359,7 +352,6 @@ export default function Home() {
             <p><b>B.E. Computer Science & Engineering</b><span>Yenepoya Institute of Technology (VTU), Mangalore · 2021—2025 · CGPA 7.3 / 10.0</span></p>
             <span className="education-label">FOUNDATION</span>
           </div>
-          <div className="stack-ledger"><span>METHOD</span><b>THINK IN CONTRACTS → BUILD IN LAYERS → SHIP WITH CLARITY</b><span>STATUS / ACTIVE</span></div>
         </section>
 
         <section className="contact-section" id="contact" aria-labelledby="contact-heading">
@@ -375,7 +367,7 @@ export default function Home() {
             <a href="https://www.linkedin.com/in/sanudilshan" target="_blank" rel="noreferrer"><Linkedin size={16} />linkedin.com/in/sanudilshan</a>
             <a href="https://github.com/SanuDilshan" target="_blank" rel="noreferrer"><Github size={16} />github.com/SanuDilshan</a>
           </div>
-          <div className="contact-ledger"><span>SIGNAL / READY</span><b>FULL STACK · BACKEND · INDIA / REMOTE</b><span>CONNECT_04</span></div>
+          <div className="contact-availability"><span className="contact-status-dot" />Available for full-stack and backend opportunities</div>
           <div className="contact-footer"><span>© {new Date().getFullYear()} SANU DILSHAN</span><span>BUILT WITH INTENT <AtlasMark compact /></span></div>
         </section>
       </div>

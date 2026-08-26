@@ -1,5 +1,11 @@
 # Portfolio refinement checklist
 
+- [x] Map the ten visual-editor comments to the current Home page components and confirm the intended changes.
+- [x] Remove the three marked decorative/status elements and the three marked proof labels.
+- [x] Repair the flagged identity rail, work-section, project-card, and contact-footer layouts.
+- [x] Replace the marked footer detail with a more useful closing element.
+- [x] Verify the revised page at desktop and mobile sizes, then save a checkpoint.
+
 - [x] Inspect the Expense Tracker API card at desktop and mobile sizes to identify its incorrect alignment.
 - [x] Remove IBM Plex Mono from the font imports and metadata styling, replacing it with a suitable modern alternative.
 - [x] Correct the Expense Tracker API card’s layout so its image and content align consistently with the project sequence.
