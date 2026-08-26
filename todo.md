@@ -1,5 +1,8 @@
 # Portfolio refinement checklist
 
+- [x] Blend the portrait into the manifesto background with soft edges while preserving the original subject.
+- [x] Verify the blended portrait treatment on desktop and mobile, then save a checkpoint.
+
 - [x] Fit the supplied portrait more fully to the right side of the manifesto section and remove its caption.
 - [x] Verify the revised portrait composition at desktop and mobile sizes, then save a checkpoint.
 
