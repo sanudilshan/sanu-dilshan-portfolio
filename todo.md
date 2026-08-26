@@ -1,5 +1,8 @@
 # Portfolio refinement checklist
 
+- [x] Fit the supplied portrait more fully to the right side of the manifesto section and remove its caption.
+- [x] Verify the revised portrait composition at desktop and mobile sizes, then save a checkpoint.
+
 - [x] Move the selected manifesto heading and supporting copy into the top-left position.
 - [x] Place the selected portrait image on the right without harming the mobile sequence.
 - [x] Verify the revised manifesto section on desktop and mobile, then save a checkpoint.

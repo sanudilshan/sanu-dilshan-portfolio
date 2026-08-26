@@ -328,7 +328,6 @@ export default function Home() {
               <div className="portrait-frame">
                 <img src="/manus-storage/Sanu_Dilshan_Portrait_951cc856.webp" alt="Sanu Dilshan in professional attire" />
               </div>
-              <figcaption><span>01</span><b>SANU DILSHAN</b><em>FULL STACK DEVELOPER</em></figcaption>
             </figure>
           </div>
           <div className="proof-strip" aria-label="Professional highlights">
