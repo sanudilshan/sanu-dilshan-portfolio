@@ -1,5 +1,8 @@
 # Portfolio refinement checklist
 
+- [x] Move the marked section heading to the top-right and preserve responsive readability.
+- [x] Verify the new heading placement on desktop and mobile, then save a checkpoint.
+
 - [x] Identify and remove the three page elements targeted in the latest visual-editor request.
 - [x] Verify the cleaned-up page at desktop and mobile sizes, then save a checkpoint.
 
